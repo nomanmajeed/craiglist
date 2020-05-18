@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,9 +9,58 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+     <!-- Static CSS-->
+     {# <link rel="stylesheet" href="{% static "craigapp/flex.css" %}" type="text/css"> #}
+
     <title>Craiglist</title>
   </head>
   <body>
+    <nav class="navbar navbar-dark bg-dark">
+    <a class="container navbar-brand" href="{% url 'home' %}">Craiglist</a>
+    <form class="form-inline" method="POST" action="{% url 'search' %}">
+      {% csrf_token %}
+      <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    </nav>
+
+    <h1 class="text-center mt-5 mb-2">What do you want to search for?</h1>
+
+    <div class="container mt-5 mb-2">
+
+      <div class="row">
+        <div class="col-md" >
+          <center>
+          <svg class="bi bi-lightning-fill mb-4" width="5em" height="5em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M11.251.068a.5.5 0 01.227.58L9.677 6.5H13a.5.5 0 01.364.843l-8 8.5a.5.5 0 01-.842-.49L6.323 9.5H3a.5.5 0 01-.364-.843l8-8.5a.5.5 0 01.615-.09z" clip-rule="evenodd"/>
+          </svg>
+          <br>
+          <h5>Fast Craiglist Web Scraper</h5>
+          Scrape away right away with BeautifulSoup
+          </center>
+        </div>
+        <div class="col-md" >
+          <center>
+          <svg class="bi bi-lightning-fill mb-4" width="5em" height="5em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M11.251.068a.5.5 0 01.227.58L9.677 6.5H13a.5.5 0 01.364.843l-8 8.5a.5.5 0 01-.842-.49L6.323 9.5H3a.5.5 0 01-.364-.843l8-8.5a.5.5 0 01.615-.09z" clip-rule="evenodd"/>
+          </svg>
+          <br>
+          <h5>Fast Craiglist Web Scraper</h5>
+          Scrape away right away with BeautifulSoup
+          </center>
+        </div>
+        <div class="col-md" >
+          <center>
+          <svg class="bi bi-lightning-fill mb-4" width="5em" height="5em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M11.251.068a.5.5 0 01.227.58L9.677 6.5H13a.5.5 0 01.364.843l-8 8.5a.5.5 0 01-.842-.49L6.323 9.5H3a.5.5 0 01-.364-.843l8-8.5a.5.5 0 01.615-.09z" clip-rule="evenodd"/>
+          </svg>
+          <br>
+          <h5>Fast Craiglist Web Scraper</h5>
+          Scrape away right away with BeautifulSoup
+          </center>
+        </div>
+      </div>
+    </div>
     {% block pagecontent %}
 
     {% endblock pagecontent%}

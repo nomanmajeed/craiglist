@@ -4,5 +4,6 @@ from craigapp import views
 
 urlpatterns = [
     path('', views.index, name="home"),
+    path('search/', views.new_search, name="search")
 
 ]
